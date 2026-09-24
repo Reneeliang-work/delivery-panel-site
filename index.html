@@ -1,0 +1,76 @@
+<!--delivery-panel-encrypted--><!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>需要密码</title><style>
+:root{color-scheme:light}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+     background:#f5f6f8;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+     color:#1c1f23;padding:24px}
+.box{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:28px 26px;
+     width:100%;max-width:360px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+h1{font-size:17px;margin:0 0 6px;font-weight:650}
+p{font-size:13px;color:#6b7280;margin:0 0 18px;line-height:1.6}
+input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;
+      border:1px solid #d5d9de;border-radius:8px;background:#fff;color:#1c1f23}
+input:focus{outline:none;border-color:#6b7280}
+button{width:100%;margin-top:10px;padding:10px;font-size:14px;font-weight:600;
+       border:0;border-radius:8px;background:#1c1f23;color:#fff;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+.err{color:#c0392b;font-size:13px;margin-top:10px;min-height:18px}
+</style></head><body>
+<div class="box">
+  <h1>大盘-英语自制 · 投放面板</h1>
+  <p>这是公司内部数据，请输入密码查看。</p>
+  <form id="f"><input id="pw" type="password" autocomplete="current-password"
+    placeholder="密码" autofocus><button id="b" type="submit">打开</button></form>
+  <div class="err" id="e"></div>
+</div>
+<script>
+var D = {"salt": "RuCVJ2MZk614rVDAXDNrdQ==", "iv": "h2GXSbnMCQTtr7DIdAZ4pQ==", "ct": "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", "mac": "SaiXMXrg5PSc1H0f+dipS24nejSzXKhlz3yiTfy4DPA=", "iter": 300000};
+var KEY = 'dp_pw';
+
+function b64(s){var r=atob(s),a=new Uint8Array(r.length);
+  for(var i=0;i<r.length;i++)a[i]=r.charCodeAt(i);return a;}
+
+async function unlock(pw, quiet){
+  var enc = new TextEncoder();
+  var base = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveBits']);
+  var bits = await crypto.subtle.deriveBits(
+    {name:'PBKDF2', salt:b64(D.salt), iterations:D.iter, hash:'SHA-256'}, base, 512);
+  var raw = new Uint8Array(bits);
+  var encKey = raw.slice(0, 32), macKey = raw.slice(32, 64);
+
+  var iv = b64(D.iv), ct = b64(D.ct);
+  var signed = new Uint8Array(iv.length + ct.length);
+  signed.set(iv, 0); signed.set(ct, iv.length);
+
+  var hk = await crypto.subtle.importKey('raw', macKey,
+    {name:'HMAC', hash:'SHA-256'}, false, ['verify']);
+  var ok = await crypto.subtle.verify('HMAC', hk, b64(D.mac), signed);
+  if(!ok) throw new Error('bad password');
+
+  var ck = await crypto.subtle.importKey('raw', encKey, {name:'AES-CBC'}, false, ['decrypt']);
+  var plain = await crypto.subtle.decrypt({name:'AES-CBC', iv:iv}, ck, ct);
+  try{ sessionStorage.setItem(KEY, pw); }catch(e){}
+  var html = new TextDecoder().decode(plain);
+  document.open(); document.write(html); document.close();
+}
+
+document.getElementById('f').addEventListener('submit', async function(ev){
+  ev.preventDefault();
+  var b = document.getElementById('b'), e = document.getElementById('e');
+  b.disabled = true; e.textContent = '解密中…';
+  try{ await unlock(document.getElementById('pw').value); }
+  catch(err){ e.textContent = '密码不对'; b.disabled = false;
+              document.getElementById('pw').select(); }
+});
+
+// 同一次浏览会话里，页面之间跳转不用重复输密码
+(async function(){
+  var saved = null;
+  try{ saved = sessionStorage.getItem(KEY); }catch(e){}
+  if(!saved) return;
+  try{ await unlock(saved, true); }
+  catch(err){ try{ sessionStorage.removeItem(KEY); }catch(e){} }
+})();
+</script></body></html>
