@@ -1,0 +1,104 @@
+<!--delivery-panel-encrypted--><!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>需要密码</title><style>
+:root{color-scheme:light}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+     background:#f5f6f8;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+     color:#1c1f23;padding:24px}
+.box{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:28px 26px;
+     width:100%;max-width:360px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+h1{font-size:17px;margin:0 0 6px;font-weight:650}
+p{font-size:13px;color:#6b7280;margin:0 0 18px;line-height:1.6}
+input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;
+      border:1px solid #d5d9de;border-radius:8px;background:#fff;color:#1c1f23}
+input:focus{outline:none;border-color:#6b7280}
+button{width:100%;margin-top:10px;padding:10px;font-size:14px;font-weight:600;
+       border:0;border-radius:8px;background:#1c1f23;color:#fff;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+.err{color:#c0392b;font-size:13px;margin-top:10px;min-height:18px}
+</style></head><body>
+<div class="box">
+  <h1 id="__dp_h">大盘-英语自制 · 投放面板</h1>
+  <p>这是公司内部数据，请输入密码查看。</p>
+  <form id="f"><input id="pw" type="password" autocomplete="current-password"
+    placeholder="密码" autofocus><button id="b" type="submit">打开</button></form>
+  <div class="err" id="e"></div>
+</div>
+<script>
+var __DP_D = {"salt": "sMbTU9rjm0E2nPjgEZjjUw==", "iv": "1m8kM9OGChv2tYbCl3qtLQ==", "ct": "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", "mac": "qIlySiZm1ifJathzVgEY7FZyUvznQG94+vrGFpl0eV4=", "iter": 300000};
+// 环大陆（huandalu/ 子目录）用单独的密码，记住的密码也分开存，免得两边互相覆盖
+// 子站各用各的密码：记住的密码分开存、密码页标题分开显示
+var __DP_SUB = { 'huandalu': ['dp_pw_huandalu', '环大陆-素材数据面板'],
+                 'huandalu-lifecycle': ['dp_pw_huandalu_lc', '环大陆-剧集生命周期'] };
+var __DP_DIR = (location.pathname.split('/').slice(-2, -1)[0]) || '';
+var __DP_KEY = __DP_SUB[__DP_DIR] ? __DP_SUB[__DP_DIR][0] : 'dp_pw';
+if (__DP_SUB[__DP_DIR]) { try{ document.getElementById('__dp_h').textContent = __DP_SUB[__DP_DIR][1]; }catch(e){} }
+var __DP_GC = "renee-24345464";
+
+function __dp_hit(kind){
+  if(!__DP_GC) return;
+  try{
+    var __dp_seg = location.pathname.split('/');
+    var page = (__dp_seg.pop() || 'index.html').replace(/\.html$/, '') || 'index';
+    // 环大陆单独入口（huandalu/ 子目录）：统计名加前缀，免得和大盘的 index 混在一起
+    var __dp_dir = __dp_seg.pop();
+    if (__dp_dir === 'huandalu') page = 'huandalu_' + page;
+    else if (__dp_dir === 'huandalu-lifecycle') page = 'huandalu_lc_' + page;
+    var q = 'p=' + encodeURIComponent(kind + '/' + page) + '&e=true'
+          + '&t=' + encodeURIComponent(kind + ' · ' + page)
+          + '&s=' + encodeURIComponent(screen.width + ',' + screen.height + ',' + (window.devicePixelRatio || 1))
+          + '&rnd=' + Math.random().toString(36).slice(2);
+    // keepalive：解锁后 document.open() 会替换整页，普通请求可能被取消
+    fetch('https://' + __DP_GC + '.goatcounter.com/count?' + q, {mode:'no-cors', keepalive:true, credentials:'omit'});
+  }catch(e){}
+}
+
+function __dp_b64(s){var r=atob(s),a=new Uint8Array(r.length);
+  for(var i=0;i<r.length;i++)a[i]=r.charCodeAt(i);return a;}
+
+async function __dp_unlock(pw, quiet){
+  var enc = new TextEncoder();
+  var base = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveBits']);
+  var bits = await crypto.subtle.deriveBits(
+    {name:'PBKDF2', salt:__dp_b64(__DP_D.salt), iterations:__DP_D.iter, hash:'SHA-256'}, base, 512);
+  var raw = new Uint8Array(bits);
+  var encKey = raw.slice(0, 32), macKey = raw.slice(32, 64);
+
+  var iv = __dp_b64(__DP_D.iv), ct = __dp_b64(__DP_D.ct);
+  var signed = new Uint8Array(iv.length + ct.length);
+  signed.set(iv, 0); signed.set(ct, iv.length);
+
+  var hk = await crypto.subtle.importKey('raw', macKey,
+    {name:'HMAC', hash:'SHA-256'}, false, ['verify']);
+  var ok = await crypto.subtle.verify('HMAC', hk, __dp_b64(__DP_D.mac), signed);
+  if(!ok) throw new Error('bad password');
+
+  var ck = await crypto.subtle.importKey('raw', encKey, {name:'AES-CBC'}, false, ['decrypt']);
+  var plain = await crypto.subtle.decrypt({name:'AES-CBC', iv:iv}, ck, ct);
+  try{ sessionStorage.setItem(__DP_KEY, pw); }catch(e){}
+  __dp_hit('view');
+  var html = new TextDecoder().decode(plain);
+  document.open(); document.write(html); document.close();
+}
+
+document.getElementById('f').addEventListener('submit', async function(ev){
+  ev.preventDefault();
+  var b = document.getElementById('b'), e = document.getElementById('e');
+  b.disabled = true; e.textContent = '解密中…';
+  try{ await __dp_unlock(document.getElementById('pw').value); }
+  catch(err){ __dp_hit('badpw'); e.textContent = '密码不对'; b.disabled = false;
+              document.getElementById('pw').select(); }
+});
+
+__dp_hit('open');
+
+// 同一次浏览会话里，页面之间跳转不用重复输密码
+(async function(){
+  var saved = null;
+  try{ saved = sessionStorage.getItem(__DP_KEY); }catch(e){}
+  if(!saved) return;
+  try{ await __dp_unlock(saved, true); }
+  catch(err){ try{ sessionStorage.removeItem(__DP_KEY); }catch(e){} }
+})();
+</script></body></html>
