@@ -1,0 +1,104 @@
+<!--delivery-panel-encrypted--><!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>需要密码</title><style>
+:root{color-scheme:light}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+     background:#f5f6f8;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+     color:#1c1f23;padding:24px}
+.box{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:28px 26px;
+     width:100%;max-width:360px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+h1{font-size:17px;margin:0 0 6px;font-weight:650}
+p{font-size:13px;color:#6b7280;margin:0 0 18px;line-height:1.6}
+input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;
+      border:1px solid #d5d9de;border-radius:8px;background:#fff;color:#1c1f23}
+input:focus{outline:none;border-color:#6b7280}
+button{width:100%;margin-top:10px;padding:10px;font-size:14px;font-weight:600;
+       border:0;border-radius:8px;background:#1c1f23;color:#fff;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+.err{color:#c0392b;font-size:13px;margin-top:10px;min-height:18px}
+</style></head><body>
+<div class="box">
+  <h1 id="__dp_h">大盘-英语自制 · 投放面板</h1>
+  <p>这是公司内部数据，请输入密码查看。</p>
+  <form id="f"><input id="pw" type="password" autocomplete="current-password"
+    placeholder="密码" autofocus><button id="b" type="submit">打开</button></form>
+  <div class="err" id="e"></div>
+</div>
+<script>
+var __DP_D = {"salt": "BH0rnXS65ZB8DMTwtmxr4Q==", "iv": "+XusUGnDURKi451Wxbv0Yw==", "ct": "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", "mac": "MZWquBtCquAI0PvJf9zaceX9EZc/CQZy+PDKj9mIsZs=", "iter": 300000};
+// 环大陆（huandalu/ 子目录）用单独的密码，记住的密码也分开存，免得两边互相覆盖
+// 子站各用各的密码：记住的密码分开存、密码页标题分开显示
+var __DP_SUB = { 'huandalu': ['dp_pw_huandalu', '环大陆-素材数据面板'],
+                 'huandalu-lifecycle': ['dp_pw_huandalu_lc', '环大陆-剧集生命周期'] };
+var __DP_DIR = (location.pathname.split('/').slice(-2, -1)[0]) || '';
+var __DP_KEY = __DP_SUB[__DP_DIR] ? __DP_SUB[__DP_DIR][0] : 'dp_pw';
+if (__DP_SUB[__DP_DIR]) { try{ document.getElementById('__dp_h').textContent = __DP_SUB[__DP_DIR][1]; }catch(e){} }
+var __DP_GC = "renee-24345464";
+
+function __dp_hit(kind){
+  if(!__DP_GC) return;
+  try{
+    var __dp_seg = location.pathname.split('/');
+    var page = (__dp_seg.pop() || 'index.html').replace(/\.html$/, '') || 'index';
+    // 环大陆单独入口（huandalu/ 子目录）：统计名加前缀，免得和大盘的 index 混在一起
+    var __dp_dir = __dp_seg.pop();
+    if (__dp_dir === 'huandalu') page = 'huandalu_' + page;
+    else if (__dp_dir === 'huandalu-lifecycle') page = 'huandalu_lc_' + page;
+    var q = 'p=' + encodeURIComponent(kind + '/' + page) + '&e=true'
+          + '&t=' + encodeURIComponent(kind + ' · ' + page)
+          + '&s=' + encodeURIComponent(screen.width + ',' + screen.height + ',' + (window.devicePixelRatio || 1))
+          + '&rnd=' + Math.random().toString(36).slice(2);
+    // keepalive：解锁后 document.open() 会替换整页，普通请求可能被取消
+    fetch('https://' + __DP_GC + '.goatcounter.com/count?' + q, {mode:'no-cors', keepalive:true, credentials:'omit'});
+  }catch(e){}
+}
+
+function __dp_b64(s){var r=atob(s),a=new Uint8Array(r.length);
+  for(var i=0;i<r.length;i++)a[i]=r.charCodeAt(i);return a;}
+
+async function __dp_unlock(pw, quiet){
+  var enc = new TextEncoder();
+  var base = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveBits']);
+  var bits = await crypto.subtle.deriveBits(
+    {name:'PBKDF2', salt:__dp_b64(__DP_D.salt), iterations:__DP_D.iter, hash:'SHA-256'}, base, 512);
+  var raw = new Uint8Array(bits);
+  var encKey = raw.slice(0, 32), macKey = raw.slice(32, 64);
+
+  var iv = __dp_b64(__DP_D.iv), ct = __dp_b64(__DP_D.ct);
+  var signed = new Uint8Array(iv.length + ct.length);
+  signed.set(iv, 0); signed.set(ct, iv.length);
+
+  var hk = await crypto.subtle.importKey('raw', macKey,
+    {name:'HMAC', hash:'SHA-256'}, false, ['verify']);
+  var ok = await crypto.subtle.verify('HMAC', hk, __dp_b64(__DP_D.mac), signed);
+  if(!ok) throw new Error('bad password');
+
+  var ck = await crypto.subtle.importKey('raw', encKey, {name:'AES-CBC'}, false, ['decrypt']);
+  var plain = await crypto.subtle.decrypt({name:'AES-CBC', iv:iv}, ck, ct);
+  try{ sessionStorage.setItem(__DP_KEY, pw); }catch(e){}
+  __dp_hit('view');
+  var html = new TextDecoder().decode(plain);
+  document.open(); document.write(html); document.close();
+}
+
+document.getElementById('f').addEventListener('submit', async function(ev){
+  ev.preventDefault();
+  var b = document.getElementById('b'), e = document.getElementById('e');
+  b.disabled = true; e.textContent = '解密中…';
+  try{ await __dp_unlock(document.getElementById('pw').value); }
+  catch(err){ __dp_hit('badpw'); e.textContent = '密码不对'; b.disabled = false;
+              document.getElementById('pw').select(); }
+});
+
+__dp_hit('open');
+
+// 同一次浏览会话里，页面之间跳转不用重复输密码
+(async function(){
+  var saved = null;
+  try{ saved = sessionStorage.getItem(__DP_KEY); }catch(e){}
+  if(!saved) return;
+  try{ await __dp_unlock(saved, true); }
+  catch(err){ try{ sessionStorage.removeItem(__DP_KEY); }catch(e){} }
+})();
+</script></body></html>
